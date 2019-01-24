@@ -8,9 +8,15 @@
 
 team_name = 'Jody Nate' # Only 10 chars displayed.
 strategy_name = 'but listen..'
-strategy_description = 'we start betraying a little because people actin nice'
+strategy_description = 'ditto'
     
 def move(my_history, their_history, my_score, their_score):
+    if len(my_history)<2:  #first round
+        return 'b'
+    else:
+        return (their_history[-0])
+        
+        
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -27,12 +33,4 @@ def move(my_history, their_history, my_score, their_score):
     # Decide whether to return 'c' or 'b'.
     
     
-    if len(their_history) <= 39: # Betray for the first 39 rounds 
-        return 'b'               # Betray
-    else:
-        for result in their_history:
-            if result == 'b':
-                return 'b'
-            else: 
-                return 'c'
-        
+   
